@@ -258,37 +258,47 @@ public class ElasticDragLayout extends CoordinatorLayout {
                                int dxUnconsumed,
                                int dyUnconsumed,
                                int type) {
-        super.onNestedScroll(target, dxConsumed, dyConsumed, dxUnconsumed, dyUnconsumed, type);
+        super.onNestedScroll(target,
+                             dxConsumed, dyConsumed,
+                             dxUnconsumed, dyUnconsumed,
+                             type);
 
-        if ((mOverDragOrientation & OVER_DRAG_HORIZONTAL) == OVER_DRAG_HORIZONTAL) {
-            dragScaleHorizontally(dxUnconsumed);
-        } else {
-            // FIXME: Support full orientation.
-            dragScaleVertically(dyUnconsumed);
+        // FIXME: Don't do the nested scroll if it is not triggered by the user.
+        if (type != ViewCompat.TYPE_NON_TOUCH) {
+            if ((mOverDragOrientation & OVER_DRAG_HORIZONTAL) == OVER_DRAG_HORIZONTAL) {
+                dragScaleHorizontally(dxUnconsumed);
+            } else {
+                // FIXME: Support full orientation.
+                dragScaleVertically(dyUnconsumed);
+            }
         }
     }
 
     @Override
-    public void onStopNestedScroll(View child) {
-        super.onStopNestedScroll(child);
+    public void onStopNestedScroll(View child,
+                                   int type) {
+        super.onStopNestedScroll(child, type);
 
-        float totalDrag = mTotalDrag;
-        if (mDragDirection == OVER_DRAG_UP_ONLY) {
-            totalDrag = Math.max(0, totalDrag);
-        } else if (mDragDirection == OVER_DRAG_DOWN_ONLY) {
-            totalDrag = Math.min(0, totalDrag);
-        }
-
-        try {
-            if (Math.abs(totalDrag) >= mDragOverDistance) {
-                onDragOver(totalDrag);
-            } else {
-                onDragCancel();
+        // FIXME: Don't do the nested scroll if it is not triggered by the user.
+        if (type != ViewCompat.TYPE_NON_TOUCH) {
+            float totalDrag = mTotalDrag;
+            if (mDragDirection == OVER_DRAG_UP_ONLY) {
+                totalDrag = Math.max(0, totalDrag);
+            } else if (mDragDirection == OVER_DRAG_DOWN_ONLY) {
+                totalDrag = Math.min(0, totalDrag);
             }
-        } finally {
-            // Update the state.
-            mTotalDrag = 0;
-            mDraggingEnd = mDraggingStart = false;
+
+            try {
+                if (Math.abs(totalDrag) >= mDragOverDistance) {
+                    onDragOver(totalDrag);
+                } else {
+                    onDragCancel();
+                }
+            } finally {
+                // Update the state.
+                mTotalDrag = 0;
+                mDraggingEnd = mDraggingStart = false;
+            }
         }
     }
 
