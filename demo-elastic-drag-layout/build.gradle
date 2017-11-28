@@ -55,6 +55,8 @@ dependencies {
     implementation rootProject.ext.dep.airbnbEpoxy
 
     implementation project(path: ':elastic-drag-layout')
+    // For testing.
+//    implementation 'com.my:elastic-drag-layout:1.0.0'
 
     testImplementation rootProject.ext.dep.testJunit
 
