@@ -8,7 +8,7 @@ android {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.0"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
@@ -25,7 +25,6 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     // Google Support Library.
-    implementation rootProject.ext.dep.supportAppcompatV7
     implementation rootProject.ext.dep.supportDesign
 
     testImplementation rootProject.ext.dep.testJunit
@@ -33,3 +32,6 @@ dependencies {
     androidTestImplementation rootProject.ext.dep.testRunner
     androidTestImplementation rootProject.ext.dep.testEspressoCore
 }
+
+// Deployment script.
+apply from: 'deploy.gradle'

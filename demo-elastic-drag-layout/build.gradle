@@ -54,7 +54,7 @@ dependencies {
     // RecyclerView plugins.
     implementation rootProject.ext.dep.airbnbEpoxy
 
-    implementation project(path: ':lib-elastic-drag-layout')
+    implementation project(path: ':elastic-drag-layout')
 
     testImplementation rootProject.ext.dep.testJunit
 
