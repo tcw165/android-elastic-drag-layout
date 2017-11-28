@@ -44,10 +44,8 @@ import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
  * dismissable layouts. Applies an elasticity factor to reduce movement as you
  * approach the given dismiss distance.
  * Optionally also scales down content during drag.
- * <br/>
  * Note: Add {@link R.styleable#ElasticDragLayout_elastic_elasticScrollView} attribute
  * to the child view you want it to be dragged elastically in the layout file.
- * <br/> <br/>
  * Attributes for itself:
  * <ul>
  * <li>
@@ -68,7 +66,6 @@ import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
  * The scale factor when over dragging.
  * </li>
  * </ul>
- * <br/> <br/>
  * Attributes for child views:
  * <ul>
  * <li>
@@ -86,42 +83,33 @@ import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
  * {@link R.styleable#ElasticDragLayout_elastic_elasticScrollViewFooter}
  * </li>
  * </ul>
- * <br/>
  */
 public class ElasticDragLayout extends CoordinatorLayout {
 
     // Configurable attributes.
     /**
      * The over dragging distance.
-     * <br/>
      * Attribute:
-     * <br/>
      * See {@link R.styleable#ElasticDragLayout_elastic_dragOverMaxDistance}.
      */
     protected float mDragOverMaxDistance = 244f;
     /**
      * The distance that the {@link OnElasticDragCallback#onDragOver(float)}
      * callback is called when over dragging.
-     * <br/>
      * Attribute:
-     * <br/>
      * See {@link R.styleable#ElasticDragLayout_elastic_dragOverDistance}.
      */
     protected float mDragOverDistance = 56f;
     /**
      * The scale factor when over dragging.
-     * <br/>
      * Attribute:
-     * <br/>
      * See {@link R.styleable#ElasticDragLayout_elastic_dragScale}.
      */
     protected float mDragScale = 1.f;
     protected boolean mShouldScale = false;
     /**
      * The elasticity factor of over dragging.
-     * <br/>
      * Attribute:
-     * <br/>
      * See {@link R.styleable#ElasticDragLayout_elastic_dragElasticity}.
      */
     protected float mDragElasticity = 0.8f;
@@ -131,9 +119,6 @@ public class ElasticDragLayout extends CoordinatorLayout {
     public static final int OVER_DRAG_UP_ONLY = 2;
     /**
      * The flag controlling the behavior of the over drag.
-     * <br/>
-     * Attribute:
-     * <br/>
      */
     // TODO: Add attribute
     protected int mDragDirection = OVER_DRAG_TWO_WAYS;
@@ -149,9 +134,7 @@ public class ElasticDragLayout extends CoordinatorLayout {
     // TODO: Replace mDragDirection
     /**
      * The flag controlling the over drag orientation.
-     * <br/>
      * Attribute:
-     * <br/>
      * See {@link R.styleable#ElasticDragLayout_elastic_OverDragOrientation}.
      */
     protected int mOverDragOrientation = OVER_DRAG_VERTICAL;
@@ -776,6 +759,7 @@ public class ElasticDragLayout extends CoordinatorLayout {
         /**
          * Called when dragging is released and has exceeded the threshold
          * dismiss distance.
+         * @param totalDrag Total drag.
          */
         void onDragOver(float totalDrag);
 

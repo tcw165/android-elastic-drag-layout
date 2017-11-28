@@ -53,7 +53,6 @@ import java.util.List;
  * dismissable layouts. Applies an elasticity factor to reduce movement as you
  * approach the given dismiss distance.
  * Optionally also scales down content during drag.
- * <br/>
  * Attributes:
  * see {@link ElasticDragLayout}
  */
@@ -433,6 +432,7 @@ public class ElasticDragDismissLayout extends ElasticDragLayout {
         /**
          * Called when dragging is released and has exceeded the threshold
          * dismiss distance.
+         * @param totalScroll Total scroll.
          */
         void onDismissByDragOver(float totalScroll);
 
