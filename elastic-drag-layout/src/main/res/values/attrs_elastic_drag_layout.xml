@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="ElasticDragLayout">
+        <!-- Attributes for itself -->
         <attr name="elastic_dragOverDistance" format="dimension"/>
         <attr name="elastic_dragOverMaxDistance" format="dimension"/>
         <attr name="elastic_dragScale" format="float"/>
         <attr name="elastic_dragElasticity" format="float"/>
-        <attr name="elastic_OverDragOrientation" format="integer">
+        <attr name="elastic_overDragOrientation" format="integer">
             <flag name="horizontal" value="1"/>
             <flag name="horizontal_start_only" value="2"/>
             <flag name="horizontal_end_only" value="4"/>

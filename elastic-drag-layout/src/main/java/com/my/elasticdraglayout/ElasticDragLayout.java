@@ -135,7 +135,7 @@ public class ElasticDragLayout extends CoordinatorLayout {
     /**
      * The flag controlling the over drag orientation.
      * Attribute:
-     * See {@link R.styleable#ElasticDragLayout_elastic_OverDragOrientation}.
+     * See {@link R.styleable#ElasticDragLayout_elastic_overDragOrientation}.
      */
     protected int mOverDragOrientation = OVER_DRAG_VERTICAL;
 
@@ -183,9 +183,9 @@ public class ElasticDragLayout extends CoordinatorLayout {
                 R.styleable.ElasticDragLayout_elastic_dragElasticity,
                 mDragElasticity);
         }
-        if (array.hasValue(R.styleable.ElasticDragLayout_elastic_OverDragOrientation)) {
+        if (array.hasValue(R.styleable.ElasticDragLayout_elastic_overDragOrientation)) {
             mOverDragOrientation = array.getInt(
-                R.styleable.ElasticDragLayout_elastic_OverDragOrientation,
+                R.styleable.ElasticDragLayout_elastic_overDragOrientation,
                 OVER_DRAG_VERTICAL);
         }
         array.recycle();
@@ -698,6 +698,10 @@ public class ElasticDragLayout extends CoordinatorLayout {
     ///////////////////////////////////////////////////////////////////////////
     // Clazz //////////////////////////////////////////////////////////////////
 
+    /**
+     * A workaround LayoutParams that allows {@link ElasticDragLayout} recognize
+     * which child view wants the support of elastic-dragging.
+     */
     public static class LayoutParams extends CoordinatorLayout.LayoutParams {
 
         boolean isElasticScrollView;
