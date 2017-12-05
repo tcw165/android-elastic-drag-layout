@@ -3,7 +3,7 @@
 
 ![demo](docs/demo.gif)
 
-Checkout the demo code, [link](com/my/demo/elasticdraglayout/SampleOfElasticDragLayoutActivity.kt).
+Checkout the demo code, [link](demo-elastic-drag-layout/src/main/java/com/my/demo/elasticdraglayout/SampleOfElasticDragLayoutActivity.kt).
 
 Gradle
 ---
@@ -52,7 +52,7 @@ This approach supports many descendents of `NestedScrollingChild2`, e.g. `Nested
 
 ### Usage
 
-- Enclose your View (which implements the `NestedScrollChild2` interface, for example `RecyclerView`, otherwise it won't work) with the [ElasticDragLayout](com/my/elasticdraglayout/ElasticDragLayout.java).
+- Enclose your View (which implements the `NestedScrollChild2` interface, for example `RecyclerView`, otherwise it won't work) with the [ElasticDragLayout](elastic-drag-layout/src/main/java/com/my/elasticdraglayout/ElasticDragLayout.java).
 - Assign the `app:elastic_elasticScrollView` attribute to the View you want to support over-scroll effect.
 
 ```
@@ -72,7 +72,7 @@ This approach supports many descendents of `NestedScrollingChild2`, e.g. `Nested
         app:elastic_elasticScrollView="true"/>
 </com.my.elasticdraglayout.ElasticDragLayout>
 ```
-- Layout attributes for the [ElasticDragLayout](com/my/elasticdraglayout/ElasticDragLayout.java):
+- Layout attributes for the [ElasticDragLayout](elastic-drag-layout/src/main/java/com/my/elasticdraglayout/ElasticDragLayout.java):
 	- `app:elastic_dragOverMaxDistance`: The maximum distance the view could be over scrolled in dp.
 	- `app:elastic_dragOverDistance`: The over-scroll threshold distance the `onDragOver` callback is called.
 	- `app:elastic_dragScale`: The scale of the view when it is at the maximum over-scroll distance. 
@@ -85,7 +85,7 @@ This approach supports many descendents of `NestedScrollingChild2`, e.g. `Nested
 		- `vertical_start_only`
 		- `vertical_end_only`
 - Layout attributes for the child *View*:
-	- `app:elastic_elasticScrollView`: A boolean that indicates the [ElasticDragLayout](com/my/elasticdraglayout/ElasticDragLayout.java) to apply this view with the over-scroll effect. Only one is allowed.
+	- `app:elastic_elasticScrollView`: A boolean that indicates the [ElasticDragLayout](elastic-drag-layout/src/main/java/com/my/elasticdraglayout/ElasticDragLayout.java) to apply this view with the over-scroll effect. Only one is allowed.
 
 
 License
