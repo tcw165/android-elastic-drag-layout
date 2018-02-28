@@ -2,16 +2,16 @@ ext {
     compileSdkVersion = 26
     buildToolsVersion = '26.0.2'
     minSdkVersion = 16
-    targetSdkVersion = 25
+    targetSdkVersion = 26
     sourceCompatibilityVersion = JavaVersion.VERSION_1_7
     targetCompatibilityVersion = JavaVersion.VERSION_1_7
 
-    SUPPORT_LIB_VER = '26.1.0'
+    SUPPORT_LIB_VER = '27.0.2'
     PLAY_SERVICES_VER = '11.6.0'
-    KOTLIN_VER = '1.1.61'
+    KOTLIN_VER = '1.2.21'
     FIREBASE_VER = '11.6.0'
     RX_BINDING_VER = '2.0.0'
-    DAGGER2_VER = '2.11-rc2'
+    DAGGER2_VER = '2.13'
     BOLTS_VER = '1.4.0'
     RETROFIT_VER = "2.1.0"
     OKHTTP_VER = '3.0.1'
@@ -78,6 +78,8 @@ ext {
             rxBindingCompat        : "com.jakewharton.rxbinding2:rxbinding-appcompat-v7:${RX_BINDING_VER}",
             rxBindingRecyclerViewV7: "com.jakewharton.rxbinding2:rxbinding-recyclerview-v7:${RX_BINDING_VER}",
             rxPermissions          : 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.4@aar',
+            // Gesture
+            collageGestureDetector : 'com.cardinalblue.gesture:collage-gesture-detector:2.3.0',
             // View Binding.
             butterKnife            : "com.jakewharton:butterknife:${BUTTER_KNIFE_VER}",
             butterKnifeCompiler    : "com.jakewharton:butterknife-compiler:${BUTTER_KNIFE_VER}",
@@ -86,6 +88,8 @@ ext {
             dagger2                : "com.google.dagger:dagger:${DAGGER2_VER}",
             dagger2Support         : "com.google.dagger:dagger-android-support:${DAGGER2_VER}",
             dagger2Compiler        : "com.google.dagger:dagger-compiler:${DAGGER2_VER}",
+            // Navigation.
+            cicerone               : 'ru.terrakok.cicerone:cicerone:2.1.0',
             // Leak Detection.
             leakcanary             : 'com.squareup.leakcanary:leakcanary-android:1.5.1',
             leakcanaryNoOp         : 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1',
